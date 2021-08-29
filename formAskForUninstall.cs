@@ -15,6 +15,10 @@ namespace Le_Sa_Installer
 {
     public partial class formAskForUninstall : Form
     {
+        private static readonly string tempFolder = Path.GetTempPath();
+        private static readonly string fileName = String.Concat(Process.GetCurrentProcess().ProcessName, ".exe");
+        private static readonly string fileCurrentPath = Path.Combine(Environment.CurrentDirectory, fileName);
+
         public formAskForUninstall()
         {
             InitializeComponent();
@@ -36,11 +40,6 @@ namespace Le_Sa_Installer
         #endregion
 
         #region Title Bar
-        private void btnNo_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -57,19 +56,33 @@ namespace Le_Sa_Installer
         }
         #endregion
 
+        private void btnNo_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void btnYes_Click(object sender, EventArgs e)
         {
-            String fileName = String.Concat(Process.GetCurrentProcess().ProcessName, ".exe");
-            String filePath = Path.Combine(Environment.CurrentDirectory, fileName);
-            File.Copy(filePath, Path.Combine(Path.GetTempPath(), fileName));
+            if (!File.Exists(Path.Combine(tempFolder, fileName)))
+            {
+                File.Copy(fileCurrentPath, Path.Combine(tempFolder, fileName));
+            }
+            FinishUninstallation();
+            Close();
+        }
 
-            ProcessStartInfo finish = new ProcessStartInfo();
-            finish.UseShellExecute = true;
-            finish.FileName = Path.Combine(Path.GetTempPath(), fileName);
-            finish.Verb = "runas";
-            finish.Arguments = "--finish";
+        private void FinishUninstallation()
+        {
+            ProcessStartInfo finish = new ProcessStartInfo
+            {
+                UseShellExecute = true,
+                Verb = "runas",
+                WorkingDirectory = tempFolder,
+                FileName = fileName,
+                Arguments = "--finish",
+            };
             Process.Start(finish);
-            this.Close();                        
+            Close();
         }
     }
 }

@@ -31,12 +31,13 @@ namespace Le_Sa_Installer
         {
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.pnlSeparator = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnlBackground = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblWarning = new System.Windows.Forms.Label();
             this.progress = new System.Windows.Forms.ProgressBar();
-            this.cBoxPinToTaskbar = new System.Windows.Forms.CheckBox();
             this.cBoxDesktopShoutcut = new System.Windows.Forms.CheckBox();
             this.rBtnCurrentUser = new System.Windows.Forms.RadioButton();
             this.rBtnAllUsers = new System.Windows.Forms.RadioButton();
@@ -44,8 +45,6 @@ namespace Le_Sa_Installer
             this.lblLocationMsg = new System.Windows.Forms.Label();
             this.btnInstall = new System.Windows.Forms.Button();
             this.pBoxLogo = new System.Windows.Forms.PictureBox();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.pnlTitleBar.SuspendLayout();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxLogo)).BeginInit();
@@ -76,6 +75,25 @@ namespace Le_Sa_Installer
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Installer";
             // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackgroundImage = global::Le_Sa_Installer.Properties.Resources.minimize_15px;
+            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(20)))), ((int)(((byte)(36)))));
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Location = new System.Drawing.Point(645, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(28, 28);
+            this.btnMinimize.TabIndex = 3;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.btnMinimize.MouseLeave += new System.EventHandler(this.btnMinimize_MouseLeave);
+            this.btnMinimize.MouseHover += new System.EventHandler(this.btnMinimize_MouseHover);
+            // 
             // pnlSeparator
             // 
             this.pnlSeparator.Dock = System.Windows.Forms.DockStyle.Right;
@@ -84,12 +102,30 @@ namespace Le_Sa_Installer
             this.pnlSeparator.Size = new System.Drawing.Size(5, 28);
             this.pnlSeparator.TabIndex = 2;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackgroundImage = global::Le_Sa_Installer.Properties.Resources.close_12px;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(20)))), ((int)(((byte)(36)))));
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(678, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(28, 28);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            this.btnClose.MouseHover += new System.EventHandler(this.btnClose_MouseHover);
+            // 
             // pnlBackground
             // 
             this.pnlBackground.Controls.Add(this.lblStatus);
             this.pnlBackground.Controls.Add(this.lblWarning);
             this.pnlBackground.Controls.Add(this.progress);
-            this.pnlBackground.Controls.Add(this.cBoxPinToTaskbar);
             this.pnlBackground.Controls.Add(this.cBoxDesktopShoutcut);
             this.pnlBackground.Controls.Add(this.rBtnCurrentUser);
             this.pnlBackground.Controls.Add(this.rBtnAllUsers);
@@ -132,22 +168,6 @@ namespace Le_Sa_Installer
             this.progress.Size = new System.Drawing.Size(706, 5);
             this.progress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progress.TabIndex = 7;
-            // 
-            // cBoxPinToTaskbar
-            // 
-            this.cBoxPinToTaskbar.AutoSize = true;
-            this.cBoxPinToTaskbar.Checked = true;
-            this.cBoxPinToTaskbar.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cBoxPinToTaskbar.FlatAppearance.BorderSize = 0;
-            this.cBoxPinToTaskbar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cBoxPinToTaskbar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBoxPinToTaskbar.ForeColor = System.Drawing.Color.White;
-            this.cBoxPinToTaskbar.Location = new System.Drawing.Point(110, 111);
-            this.cBoxPinToTaskbar.Name = "cBoxPinToTaskbar";
-            this.cBoxPinToTaskbar.Size = new System.Drawing.Size(104, 20);
-            this.cBoxPinToTaskbar.TabIndex = 6;
-            this.cBoxPinToTaskbar.Text = "Pin to taskbar";
-            this.cBoxPinToTaskbar.UseVisualStyleBackColor = true;
             // 
             // cBoxDesktopShoutcut
             // 
@@ -242,44 +262,6 @@ namespace Le_Sa_Installer
             this.pBoxLogo.TabIndex = 1;
             this.pBoxLogo.TabStop = false;
             // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackgroundImage = global::Le_Sa_Installer.Properties.Resources.minimize_15px;
-            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(20)))), ((int)(((byte)(36)))));
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Location = new System.Drawing.Point(645, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(28, 28);
-            this.btnMinimize.TabIndex = 3;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            this.btnMinimize.MouseLeave += new System.EventHandler(this.btnMinimize_MouseLeave);
-            this.btnMinimize.MouseHover += new System.EventHandler(this.btnMinimize_MouseHover);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackgroundImage = global::Le_Sa_Installer.Properties.Resources.close_12px;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(20)))), ((int)(((byte)(36)))));
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(678, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(28, 28);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
-            this.btnClose.MouseHover += new System.EventHandler(this.btnClose_MouseHover);
-            // 
             // formInstaller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,7 +299,6 @@ namespace Le_Sa_Installer
         private System.Windows.Forms.RadioButton rBtnAllUsers;
         private System.Windows.Forms.RadioButton rBtnCurrentUser;
         private System.Windows.Forms.ProgressBar progress;
-        private System.Windows.Forms.CheckBox cBoxPinToTaskbar;
         private System.Windows.Forms.CheckBox cBoxDesktopShoutcut;
         private System.Windows.Forms.Label lblWarning;
         private System.Windows.Forms.Label lblStatus;

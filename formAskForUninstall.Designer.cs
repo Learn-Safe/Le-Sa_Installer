@@ -160,7 +160,8 @@ namespace Le_Sa_Installer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formAskForUninstall";
-            this.Text = "formAskForUninstall";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Uinstall";
             this.pnlTitleBar.ResumeLayout(false);
             this.pnlTitleBar.PerformLayout();
             this.pnlBackground.ResumeLayout(false);
