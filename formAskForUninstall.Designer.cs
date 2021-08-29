@@ -54,17 +54,19 @@ namespace Le_Sa_Installer
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.Size = new System.Drawing.Size(397, 28);
             this.pnlTitleBar.TabIndex = 3;
+            this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
+            this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(140, 7);
+            this.lblTitle.Location = new System.Drawing.Point(167, 7);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(53, 16);
+            this.lblTitle.Size = new System.Drawing.Size(69, 16);
             this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Installer";
+            this.lblTitle.Text = "Uninstaller";
             // 
             // btnClose
             // 
@@ -160,7 +162,8 @@ namespace Le_Sa_Installer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formAskForUninstall";
-            this.Text = "formAskForUninstall";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Uinstall";
             this.pnlTitleBar.ResumeLayout(false);
             this.pnlTitleBar.PerformLayout();
             this.pnlBackground.ResumeLayout(false);
